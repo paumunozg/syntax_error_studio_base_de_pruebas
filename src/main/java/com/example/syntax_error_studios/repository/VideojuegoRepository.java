@@ -84,5 +84,12 @@ public interface VideojuegoRepository extends JpaRepository<Videojuego, Long> {
     )
     List<Videojuego> buscarPorPrecioMenor(@Param("precio") int precio);
 
+    //Buscar por precio mayor o igual
+    @Query(
+        value = "SELECT * FROM videojuegos WHERE precio_videojuego >= :precio",
+        nativeQuery = true
+    )
+    List<Videojuego> buscarPorPrecioMayor(@Param("precio") int precio); 
+
 
 }

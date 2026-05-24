@@ -21,13 +21,13 @@ public class Consola {
     @Column(nullable = false,length = 100)
     private String nombreConsola;
 
-    @NotBlank(message="EL codigo SKUde la consola es obligatorio")
+    @NotBlank(message="EL codigo SKU de la consola es obligatorio")
     @Column(nullable=false,length=100,unique =true)
     private String SKU;
 
     @NotNull(message="El precio de la consola es obligatorio")
-    @Positive(message="El preciod de la consola debe ser un valor positivo")
+    @Positive(message="El precio de la consola debe ser un valor positivo")
     @Column(nullable = false,precision = 10,scale=2)
     private int precioConsola;
-    
+
 }

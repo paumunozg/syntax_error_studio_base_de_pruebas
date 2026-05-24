@@ -77,4 +77,12 @@ public interface VideojuegoRepository extends JpaRepository<Videojuego, Long> {
     )
     List <Videojuego> buscarPorEan(@Param("texto")String texto);
 
+    //Buscar por precio menor o igual
+    @Query(
+        value = "SELECT * FROM videojuegos WHERE precio_videojuego <= :precio",
+        nativeQuery = true
+    )
+    List<Videojuego> buscarPorPrecioMenor(@Param("precio") int precio);
+
+
 }

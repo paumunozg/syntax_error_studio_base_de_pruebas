@@ -30,17 +30,28 @@ public class VideojuegoService {
 
     //Mapeo
     private VideojuegoResponseDTO mapToDTO(Videojuego videojuego){
-        return new VideojuegoResponseDTO(
-            videojuego.getId(),
-            videojuego.getNombreVideojuego(),
-            videojuego.getEan(),
-            videojuego.getPrecioVideojuego(),
-            videojuego.getEstado(),
-            videojuego.getConsola().getNombreConsola(),
-            videojuego.getGenero().getNombreGenero(),
-            videojuego.getModalidad().getNombreModalidad()
 
+        VideojuegoResponseDTO dto = new VideojuegoResponseDTO();
+
+        dto.setId(videojuego.getId());
+        dto.setNombreVideojuego(videojuego.getNombreVideojuego());
+        dto.setEan(videojuego.getEan());
+        dto.setPrecioVideojuego(videojuego.getPrecioVideojuego());
+        dto.setEstado(videojuego.getEstado());
+
+        dto.setNombreConsola(
+            videojuego.getConsola().getNombreConsola()
         );
+
+        dto.setNombreGenero(
+            videojuego.getGenero().getNombreGenero()
+        );
+
+        dto.setNombreModalidad(
+            videojuego.getModalidad().getNombreModalidad()
+        );
+
+        return dto;
     }
 
     //Obtener todos los videojuegos
